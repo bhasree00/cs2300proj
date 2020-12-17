@@ -1,0 +1,25 @@
+<!-- The page to create a new surgery type-->
+{% extends "base.html" %}
+{% block content %}
+    <div>
+        <form action="/index" method="POST">
+            <h3>This is the form for creating a new surgery type</h3>
+            
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id"><br>
+            <br>
+            <label for="mortRate">Mortality Rate:</label>
+            <input type="float" id="mortRate" name="mortRate"><br>
+            <br>
+            <label for="typeOf">Surgery Type:</label>
+            <input type="text" id="typeOf" name="typeOf"><br>
+            <br>
+            <label for="cost">Cost:</label>
+            <input type="float" id="cost" name="cost"><br>
+            <br>
+            <br>
+            <!-- Submit button -->
+            <input type="submit" value="Enter Information">
+        </form>
+    </div>
+{% endblock %}

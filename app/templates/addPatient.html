@@ -1,0 +1,30 @@
+<!-- The page to add a patient-->
+{% extends "base.html" %}
+{% block content %}
+    <div>
+        <form>
+            <h3>This is the input for admitting a new patient</h3>
+            <label for="id">ID:</label>
+            <input type="number" id="id" name="id"><br>
+            <br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br>
+            <br>
+            <label for="preExistCond">Pre-Existing Condition:</label>
+            <input type="text" id="preExistCond" name="preExistCond"><br>
+            <br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age"><br>
+            <br>
+            <label for="gender">Gender (M/F):</label>
+            <input type="text" id="gender" name="gender"><br>
+            <br>
+            <label for="healthInsurance">Health Insurance Coverage (Y/N):</label>
+            <input type="text" id="healthInsurance" name="healthInsurance"><br>
+            <br>
+            <br>
+            <!-- Submit button -->
+            <input type="submit" value="Enter Information">
+        </form>
+    </div>
+{% endblock %}
