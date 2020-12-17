@@ -5,23 +5,21 @@
     {% else %}
     <title>Hospital</title>
     {% endif %}
+    
+    <!-- nav bar for each page -->
+    <div class="darkGreenBackground">
+      <nav class="navbar navbar-default">
+          <div class="navbar-header" ><a class="navbar-brand" style="font-size: 50px; color:rgb(240, 29, 29);">Hospital Database</a></div>
+          <div class ="navbar navbar-expand  justify-content-center">
+              <ul class="navbar-nav ml-auto"><li class = "nav-item"><a class = "nav-link" href="/index" style="color:rgb(240, 29, 29)">Home</a></li></ul>
+              <ul class="navbar-nav ml-auto"><li class = "nav-item"><a class = "nav-link" href="/add_patient" style="color:rgb(240, 29, 29)">Add Patient</a></li></ul>
+              <ul class="navbar-nav ml-auto"><li class = "nav-item"><a class = "nav-link" href="/create_surgery" style="color:rgb(240, 29, 29)">Create Surgery</a></li></ul>
+          </div>
+          </nav>
+      </div>
   </head>
+
   <body>
-    <div>
-      Hospital: <a href="/index">Home</a>
-      <a href="/add_patient">Add Patient</a>
-      <a href="/create_surgery">Create Surgery</a>
-    </div>
-    <hr>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul>
-        {% for message in messages %}
-            <li>{{ message }} </li>
-        {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
     {% block content %}{% endblock %}
   </body>
 </html>

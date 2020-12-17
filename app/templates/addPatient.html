@@ -1,10 +1,28 @@
 <!-- The page to add a patient-->
 {% extends "base.html" %}
 {% block content %}
-    <div>
-        <form>
-            <h3>This is the input for admitting a new patient</h3>
-            <label for="id">ID:</label>
+    {% if error %}
+        <div class="alert alert-danger alert-dismissible">
+            <a href="/addPatient" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>ERROR!</strong> There is already a patient with this id: {{form.patientID.data}}
+        </div>
+    {% endif %}
+
+    <h1>Admitting a New Patient Form</h1>
+    <div class="form">
+        <form action="/index" method="post" novalidate>
+            <!--{{ form.hidden_tag() }}-->
+            <table align="center">
+                <tbody>
+                    <tr><td>{{ form.patientID.label }}</td><td>{{ form.patientID(size=30) }}</td></tr>
+                    <tr><td>{{ form.name.label }} </td><td> {{ form.name(size=30) }}</td></tr>
+                    <tr><td>{{ form.preExistCond.label }}</td><td>{{ form.preExistCond(size=30) }}</td></tr>
+                    <tr><td>{{ form.age.label }} </td><td> {{ form.age(size=30) }}</td></tr>
+                    <tr><td>{{ form.gender.label }}</td><td>{{ form.gender(size=30) }}</td></tr>
+                    <tr><td>{{ form.healthInsurance.label }}</td><td>{{ form.healthInsurance(size=30) }}</td></tr>
+                </tbody>
+            </table>
+            <!--<label for="id">ID:</label>
             <input type="number" id="id" name="id"><br>
             <br>
             <label for="name">Name:</label>
@@ -20,9 +38,10 @@
             <input type="text" id="gender" name="gender"><br>
             <br>
             <label for="healthInsurance">Health Insurance Coverage (Y/N):</label>
-            <input type="text" id="healthInsurance" name="healthInsurance"><br>
+            <input type="text" id="healthInsurance" name="healthInsurance"><br>-->
             <br>
             <br>
+            <p class = "pt-4">{{ form.submit() }}</p>
             <!-- Submit button -->
             <input type="submit" value="Enter Information">
         </form>

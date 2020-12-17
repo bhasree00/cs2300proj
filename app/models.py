@@ -1,6 +1,7 @@
 from app import db
 
 class Patient(db.Model):
+    __tablename__ = "patient"
     patientID = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
     preExistCond = db.Column(db.String(150))
@@ -14,6 +15,7 @@ class Patient(db.Model):
 
 
 class Surgery(db.Model):
+    __tablename__ = "surgery"
     surgeryID = db.Column(db.Integer, primary_key=True)
     mortalityRate = db.Column(db.Float)
     typeOf = db.Column(db.String(80), unique=True)
@@ -27,6 +29,7 @@ class Surgery(db.Model):
 
 
 class Department(db.Model):
+    __tablename__ = "department"
     deptNumber = db.Column(db.Integer, primary_key=True)
     budget = db.Column(db.Float)
     dpName = db.Column(db.String(80), unique=True)
@@ -38,6 +41,7 @@ class Department(db.Model):
 
 
 class Doctor(db.Model):
+    __tablename__ = "doctor"
     name = db.Column(db.String(80))
     doctorID = db.Column(db.Integer, primary_key=True)
     specialization = db.Column(db.String(80))
@@ -52,6 +56,7 @@ class Doctor(db.Model):
 
 
 class Nurse(db.Model):
+    __tablename__ = "nurse"
     nID = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
     assignedDoctorID = db.Column(db.Integer, db.ForeignKey('doctor.doctorID'))

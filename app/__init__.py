@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, flash
 from flask_sqlalchemy import SQLAlchemy
-from flask_bootstrap import Bootstrap
+#from flask_bootstrap import Bootstrap
 
 from flask_wtf import FlaskForm
 from wtforms import SubmitField, SelectField, RadioField, HiddenField, StringField, IntegerField, FloatField
