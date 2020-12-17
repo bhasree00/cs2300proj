@@ -9,6 +9,8 @@ from app.models import Patient, Surgery
 def index():
     return render_template("index.html", title='Home')
 
+#git status test
+
 @app.route('/add_patient', methods=['GET', 'POST'])
 def addPatient():
     form = NewPatientForm()
